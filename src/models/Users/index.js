@@ -8,7 +8,7 @@ const schema = new Schema({
         type: String
     },
     phone: {
-        type: String
+        type: String,
     },
     email: {
         type: String

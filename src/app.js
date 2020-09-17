@@ -5,8 +5,7 @@ import cors           from 'cors';
 import morgan         from 'morgan';
 import helmet         from 'helmet';
 import methodOverride from 'method-override';
-// import swaggerUi      from 'swagger-ui-express';
-// import swaggerDocument from "../swagger.json";
+
   import bodyParser from "body-parser";
 
   import routes from './api/index.js';
@@ -48,8 +47,6 @@ import methodOverride from 'method-override';
       if (mainConfig.NODE_ENV !== 'test') this.app.use(morgan('dev'));
       /** Opening media folder */
       // this.app.use('/', express.static(mainConfig.MEDIA_PATH));
-      // const swaggerDoc = require('../swagger.json');
-      // this.app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
       /** Add media folder by redis */
       // this.app.use('/image', ImageRoutes);
     }
@@ -57,7 +54,6 @@ import methodOverride from 'method-override';
     routes () {
       this.app.get('/favicon.ico', (req, res) => res.status(204));
 
-      // this.app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
       this.app.get('/', (req, res) => {
         res.send('ok');
